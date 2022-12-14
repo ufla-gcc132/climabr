@@ -1,0 +1,25 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-title>
+      Previsão
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="ion-align-items-center">
+      <ion-col class="ion-text-center">
+        <p>Lavras | Quinta, 04/03</p>
+        <div class="temperature">
+          12<sup><small>ºC</small></sup>
+        </div>
+        <img src="assets/tempestade.png" />
+        <h3>TEMPESTADE</h3>
+        <p>☂ 50% | ♨ 30%</p>
+        <ion-button color="success" (click)="onDetails()"> Ver Detalhes </ion-button>
+        <ion-button color="warning" (click)="onBack()"> Voltar </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

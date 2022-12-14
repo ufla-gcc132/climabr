@@ -24,3 +24,12 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+
+ion-title {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    font-weight: bold;
+}
