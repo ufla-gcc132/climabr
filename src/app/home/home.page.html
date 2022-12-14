@@ -8,28 +8,25 @@
   <ion-grid>
     <ion-row>
       <ion-col size="12" size-md="6" offset-md="3">
-        <ion-searchbar placeholder="Qual a sua cidade?"></ion-searchbar>
+        <ion-searchbar 
+          placeholder="Qual a sua cidade?"
+          #searchInput
+          (ionChange)="onSearch(searchInput.value)"
+          debounce="500"
+        ></ion-searchbar>
 
-        <app-error-message *ngIf="showError" message="Serviço indisponível" buttonText="Tentar novamente"></app-error-message>
+        <app-error-message *ngIf="errorMessage" [message]="errorMessage"></app-error-message>
 
-        <ion-list lines="none" *ngIf="!showError">
-          <ion-item detail button>
+        <ion-list lines="none" *ngIf="!errorMessage">
+          <ion-item detail button *ngFor="let city of cities" (click)="onSelect(city)">
             <ion-label>
-              <h2>Lavras</h2>
+              <h2>{{ city.name }}</h2>
               <ion-text color="primary">
-                <small>MG</small>
+                <small>{{ city.state }}</small>
               </ion-text>
             </ion-label>
           </ion-item>
 
-          <ion-item detail button>
-            <ion-label>
-              <h2>São Carlos</h2>
-              <ion-text color="primary">
-                <small>SP</small>
-              </ion-text>
-            </ion-label>
-          </ion-item>
         </ion-list>
       </ion-col>
     </ion-row>

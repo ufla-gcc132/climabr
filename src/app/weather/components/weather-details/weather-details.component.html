@@ -11,57 +11,28 @@
 
 <ion-content>
   <ion-grid>
-    <ion-row>
-      <ion-col class="ion-text-center">
-        <img src="assets/tempestade.png" />
+    <ion-row *ngFor="let weather of details; let i = index">
+      <ion-col class="ion-text-center" size="2">
+        <img [src]="weather.conditionIconURL" />
       </ion-col>
-      <ion-col class="ion-text-center">
-        <p><strong>05/03</strong><br /><small>Tempestade</small></p>
-      </ion-col>
-      <ion-col class="ion-text-center">
+      <ion-col class="ion-text-center" size="4">
         <p>
-          ↓ 18<sup><small>ºC</small></sup
-          ><br />↑ 25<sup><small>ºC</small></sup>
+          <strong>{{ daysAfterToday(i) | date: "dd/MM" }}</strong
+          ><br /><small>{{ weather.conditionDesc }}</small>
         </p>
       </ion-col>
-      <ion-col class="ion-text-center">
-        <p>☂ 50%<br />♨ 30%</p>
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col class="ion-text-center">
-        <img src="assets/poucas-nuvens.png" />
-      </ion-col>
-      <ion-col class="ion-text-center">
-        <p><strong>06/03</strong><br /><small>Poucas nuvens</small></p>
-      </ion-col>
-      <ion-col class="ion-text-center">
+      <ion-col class="ion-text-center" size="3">
         <p>
-          ↓ 22<sup><small>ºC</small></sup
-          ><br />↑ 30<sup><small>ºC</small></sup>
+          ↓ {{ weather.minTemp | number: "1.0-0" }}<sup><small>ºC</small></sup
+          ><br />↑ {{ weather.maxTemp | number: "1.0-0"
+          }}<sup><small>ºC</small></sup>
         </p>
       </ion-col>
-      <ion-col class="ion-text-center">
-        <p>☂ 10%<br />♨ 45%</p>
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col class="ion-text-center">
-        <img src="assets/limpo.png" />
-      </ion-col>
-      <ion-col class="ion-text-center">
-        <p><strong>07/03</strong><br /><small>Céu limpo</small></p>
-      </ion-col>
-      <ion-col class="ion-text-center">
+      <ion-col class="ion-text-center" size="3">
         <p>
-          ↓ 16<sup><small>ºC</small></sup
-          ><br />↑ 22<sup><small>ºC</small></sup>
+          ☂ {{ weather.pop | number: "1.0-0" }}%<br />♨
+          {{ weather.humidity | number: "1.0-0" }}%
         </p>
-      </ion-col>
-      <ion-col class="ion-text-center">
-        <p>☂ 87%<br />♨ 90%</p>
       </ion-col>
     </ion-row>
   </ion-grid>

@@ -8,7 +8,7 @@ const routes: Routes = [
   }
   ,
   {
-    path: 'weather',
+    path: 'weather/:id',
     loadChildren: () => import('./weather/weather.module').then(m => m.WeatherPageModule)
   },
   {

@@ -1,19 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { WeatherDetails } from 'src/app/domain/entities/weather.model';
 
 @Component({
   selector: 'app-weather-details',
   templateUrl: './weather-details.component.html',
   styleUrls: ['./weather-details.component.scss'],
 })
-export class WeatherDetailsComponent implements OnInit {
+export class WeatherDetailsComponent {
+
+  @Input() details: WeatherDetails[];
+
+  daysAfterToday(days: number) {
+    const today = new Date();
+    return new Date(today.getTime() + days * 1000 * 60 * 60 * 24);
+  }
 
   constructor(private readonly modalCtrl: ModalController) {}
 
-  ngOnInit() {}
-
-  async onClose() {
-    await this.modalCtrl.dismiss();
+  onClose() {
+    this.modalCtrl.dismiss();
   }
 
 }
