@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { City } from '../domain/entities/city.model';
-import { SearchCityService } from '../domain/services/search-city.service';
+import { City } from '../../domain/entities/city.model';
+import { SearchCityService } from '../../domain/services/search-city.service';
 
 @Component({
   selector: 'app-home',

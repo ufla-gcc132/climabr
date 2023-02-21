@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LoadingController, ModalController } from '@ionic/angular';
-import { City } from '../domain/entities/city.model';
-import { Weather } from '../domain/entities/weather.model';
-import { LoadWeatherService } from '../domain/services/load-weather.service';
-import { SearchCityService } from '../domain/services/search-city.service';
+import { City } from '../../domain/entities/city.model';
+import { Weather } from '../../domain/entities/weather.model';
+import { LoadWeatherService } from '../../domain/services/load-weather.service';
+import { SearchCityService } from '../../domain/services/search-city.service';
 import { WeatherDetailsComponent } from './components/weather-details/weather-details.component';
 
 @Component({
