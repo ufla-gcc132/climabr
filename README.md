@@ -4,9 +4,17 @@ Aplicação web para consulta da previsão do tempo de cidades brasileiras.
 
 # Como utilizar?
 
-Clone este repositório.
+Há duas maneiras de preparar o ambiente para utilização da aplicação *ClimaBR*, a saber:
 
-Entre na pasta do projeto e execute o comando abaixo para instalar as dependências:
+* **Com container (Docker + VSCode)**: Instale o [Docker](https://docs.docker.com/engine/) em seu computador. Depois, instale a extensão [Remote Container](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) no VSCode; ou
+* **Sem container**: Instale o [Node.js](https://nodejs.org/en/), preferencialmente a versão LTS, em seu computador.
+
+> A opção **Com container (Docker + VSCode)** é recomendada, a fim de se evitar problemas de incompatibilidade entre versões de bibliotecas e *frameworks*.
+
+
+Uma vez preparado o ambiente, clone este repositório e abra a pasta do projeto em sua IDE favorita. Caso tenha preparado seu ambiente utilizando a opção *Com container (Docker + VSCode)*, ao abrir a pasta do projeto no VSCode, ele irá pedir autorização para executar o container. Autorize-o! 
+
+Execute o comando abaixo para instalar as dependências do projeto:
 
 `npm install`
 
@@ -22,7 +30,7 @@ export const openWeatherConfig = {
 }
 ```
 
-Para abrir a aplicação, execute o comando:
+Para executar a aplicação, digite o comando abaixo no terminal:
 
 `ionic serve`
 
